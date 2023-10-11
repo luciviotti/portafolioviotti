@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    <link href="LLL.PNG" rel="icon">
+</head>
+<body>
+    <p>Introduce un numero</p>
+
+    <input type="text" id="num1"><br>
+    <input type="button" value="Sumar Lados" onclick="sumar()"></input>
+    <p id="suma"></p>
+    <input type="button" value="Calcular perimetro" onclick="perimetro()"></input>
+    <p id="perimetro"></p>
+    <input type="button" value="Calcular superficie" onclick="superficie()"></input>
+    <p id="superficie"></p>
+
+    <script>
+        function sumar()
+        {
+            var num1,suma;
+            num1=document.getElementById("num1").value;
+
+            suma= parseInt(num1) + parseInt(num1) + parseInt(num1) + parseInt(num1);
+            resultadosuma=suma;
+            document.getElementById("suma").innerHTML= resultadosuma;
+        }
+        function perimetro ()    
+        { 
+            var num1,perimetro;
+            num1=document.getElementById("num1").value;
+
+            perimetro= parseInt(num1) + parseInt(num1) *2;
+            resultado= perimetro;
+            document.getElementById("perimetro").innerHTML=resultado;
+        }
+        function superficie ()    
+        { 
+            var num1,superficie;
+            num1=document.getElementById("num1").value;
+
+            superficie= parseInt(num1) * parseInt(num1);
+            resultadosuperficie= superficie;
+            document.getElementById("superficie").innerHTML=resultadosuperficie;
+        }
+    </script>
+</body>
+</html>

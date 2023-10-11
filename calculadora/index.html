@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/img/LLL.PNG" rel="icon">
+</head>
+<body>
+  <div class="calculadora">
+  <form name="calculadora">
+    <input type="text" name="mostrar" id="mostrar" placeholder="Ingrese un numero" disabled>
+    <br>
+    <input class="botones" type="button" value="1" onclick="addToDisplay('1')">
+    <input class="botones" type="button" value="2" onclick="addToDisplay('2')">
+    <input class="botones" type="button" value="3" onclick="addToDisplay('3')">
+    <input class="botones" type="button" value="+" onclick="addToDisplay('+')">
+    <br>
+    <input class="botones" type="button" value="4" onclick="addToDisplay('4')">
+    <input class="botones" type="button" value="5" onclick="addToDisplay('5')">
+    <input class="botones" type="button" value="6" onclick="addToDisplay('6')">
+    <input class="botones" type="button" value="-" onclick="addToDisplay('-')">
+    <br>
+    <input class="botones" type="button" value="7" onclick="addToDisplay('7')">
+    <input class="botones" type="button" value="8" onclick="addToDisplay('8')">
+    <input class="botones" type="button" value="9" onclick="addToDisplay('9')">
+    <input class="botones" type="button" value="*" onclick="addToDisplay('*')">
+    <br>
+    <input class="botones" style="background-color:rgb(219, 177, 147);" type="button" value="C" onclick="clearDisplay()">
+    <input class="botones" type="button" value="0" onclick="addToDisplay('0')">
+    <input class="botones" type="button" value="=" onclick="calculate()">
+    <input class="botones" type="button" value="/" onclick="addToDisplay('/')">
+  </form>
+</div>
+  <script class="result">
+    function addToDisplay(value) {
+      document.calculadora.mostrar.value += value;
+    }
+
+    function clearDisplay() {
+      document.calculadora.mostrar.value = '';
+    }
+
+    function calculate() {
+      try {
+        document.calculadora.mostrar.value = eval(document.calculadora.mostrar.value);
+      } catch (error) {
+        document.calculadora.mostrar.value = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
